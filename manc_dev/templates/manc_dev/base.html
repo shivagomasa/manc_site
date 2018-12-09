@@ -29,7 +29,17 @@
             height:550px;
             border-radius:25px;
         }
-
+        .footer {
+            margin-top:30px;
+            padding:20px 20px 20px 40px;
+            background-color:grey;
+            text-align:center;
+            color:black;
+        }
+        .footer a {
+            padding:30px 30px 30px 30px;
+            color:black;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +55,22 @@
     <div class="content container">
         {% block content %}
         {% endblock %}
+    </div>
+    <div class="footer">
+            <a href="/"><i class="fab fa-facebook fa-2x"></i></a>
+
+            <a href="/"><i class="fab fa-twitter fa-2x"></i></a>
+
+            <a href="/"><i class="fab fa-google-plus fa-2x"></i></a>
+
+            <a href="/"><i class="fab fa-linkedin fa-2x"></i></a>
+
+            <a href="/"><i class="fab fa-github fa-2x"></i></a>
+
+            <a href="/"><i class="fab fa-youtube fa-2x"></i></a>
+        <p style="margin-top:50px">© 2018 Copyright:
+            <a href="/">Manc's Developers</a>
+        </p>
     </div>
 </body>
 </html>
