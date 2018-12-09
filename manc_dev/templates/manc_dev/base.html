@@ -4,43 +4,47 @@
     <meta charset="UTF-8">
     <title>Manc's dev</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style type="text/css">
         .page-header {
-            background-color: grey;
-            margin-top: 0;
-            padding: 20px 20px 10px 40px;
+            margin-top:0;
+            padding:20px 20px 10px 40px;
+            background-color:grey;
         }
-        .page-header h2 a {
+        .page-header h3 a {
             color:white;
-            font-size: 20pt;
-            text-decoration: none;
+            font-size:20pt;
+            text-decoration:none;
         }
-        .top-menu h5 a{
+         .top-menu h5 a{
             color:white;
             margin-top:9px;
             float:right;
             margin-right:20px;
             text-decoration:none;
         }
+        .lap img {
+            margin-top:30px;
+            width:1110px;
+            height:550px;
+            border-radius:25px;
+        }
+
     </style>
 </head>
 <body>
     <div class="page-header">
-        <button type="submit" class="btn btn-success" style="float:right;margin-top:10px">Sign In</button>
+         <button type="submit" class="btn btn-success" style="float:right;margin-top:10px">Sign In</button>
         <div class="top-menu">
             <h5><a href="/">Contact us</a></h5>
             <h5><a href="/">Careers</a></h5>
             <h5><a href="/">About</a></h5>
         </div>
-        <h2><a href="/">MANC'S DEV</a></h2>
+        <h3><a href="/">MANC'S DEV</a></h3>
     </div>
     <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
+        {% block content %}
+        {% endblock %}
     </div>
 </body>
 </html>
