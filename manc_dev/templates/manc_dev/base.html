@@ -29,16 +29,8 @@
             height:550px;
             border-radius:25px;
         }
-        .footer {
-            margin-top:30px;
-            padding:20px 20px 20px 40px;
-            background-color:grey;
-            text-align:center;
-            color:black;
-        }
-        .footer a {
-            padding:30px 30px 30px 30px;
-            color:black;
+        .signup-form {
+            margin-top:60px;
         }
     </style>
 </head>
@@ -47,8 +39,8 @@
          <button type="submit" class="btn btn-success" style="float:right;margin-top:10px">Sign In</button>
         <div class="top-menu">
             <h5><a href="/">Contact us</a></h5>
-            <h5><a href="/">Careers</a></h5>
-            <h5><a href="/">About</a></h5>
+            <h5><a href="{% url 'careers' %}">Careers</a></h5>
+            <h5><a href="{% url 'about' %}">About</a></h5>
         </div>
         <h3><a href="/">MANC'S DEV</a></h3>
     </div>
@@ -56,21 +48,8 @@
         {% block content %}
         {% endblock %}
     </div>
-    <div class="footer">
-            <a href="/"><i class="fab fa-facebook fa-2x"></i></a>
-
-            <a href="/"><i class="fab fa-twitter fa-2x"></i></a>
-
-            <a href="/"><i class="fab fa-google-plus fa-2x"></i></a>
-
-            <a href="/"><i class="fab fa-linkedin fa-2x"></i></a>
-
-            <a href="/"><i class="fab fa-github fa-2x"></i></a>
-
-            <a href="/"><i class="fab fa-youtube fa-2x"></i></a>
-        <p style="margin-top:50px">© 2018 Copyright:
-            <a href="/">Manc's Developers</a>
-        </p>
-    </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Test</a>
+    </nav>
 </body>
 </html>

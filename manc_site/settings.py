@@ -25,6 +25,8 @@ SECRET_KEY = 'tev2o7*5-7k5r)4knske@1-!$=ts(iqy(1z^an3=_fp$f@j-a)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 ALLOWED_HOSTS = []
 
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'manc_dev',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
