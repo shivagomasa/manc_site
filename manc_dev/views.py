@@ -6,7 +6,9 @@ from django.utils.encoding import force_bytes,force_text
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
-from .forms import SignUpForm
+from .forms import SignUpForm, ContactForm
+from django.http import HttpResponse
+from django.core.mail import BadHeaderError, EmailMessage
 from .tokens import account_activation_token
 
 
@@ -66,3 +68,31 @@ def activate(request, uidb64, token):
         return redirect('home_page')
     else:
         return render(request, 'registration/account_activation_invalid.html')
+
+
+
+def contact(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact_name = form.cleaned_data['contact_name']
+            contact_email = form.cleaned_data['contact_email']
+            content = form.cleaned_data['content']
+            try:
+                email = EmailMessage(contact_name,
+                                    content,
+                                    contact_email,
+                                    ['youremail@gmail.com'], #change to your email
+                                     reply_to=[contact_email],
+                                   )
+                email.send()
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('./thanks/')
+    return render(request, 'contact_form/contact.html', {'form': form})
+
+
+def thanks(request):
+    return render(request, 'contact_form/thanks.html')

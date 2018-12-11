@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'manc_dev',
     'crispy_forms',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,11 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home_page'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = ''
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'email@gmail.com'
+DEFAULT_FROM_EMAIL = 'testing@example.com'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

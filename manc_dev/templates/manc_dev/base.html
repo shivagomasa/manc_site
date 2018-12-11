@@ -43,7 +43,7 @@
                 <a href="{% url 'login' %}"><button type="submit" class="btn btn-success" style="margin-botton:40px;">login</button></a>
                 <a href="{% url 'signup' %}"><button type="submit" class="btn btn-success">signup</button></a>
             {% endif %}
-            <h5><a href="/">Contact us</a></h5>
+            <h5><a href="{% url 'contact' %}">Contact us</a></h5>
             <h5><a href="{% url 'careers' %}">Careers</a></h5>
             <h5><a href="{% url 'about' %}">About</a></h5>
         </div>
