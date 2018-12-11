@@ -25,7 +25,7 @@ SECRET_KEY = 'tev2o7*5-7k5r)4knske@1-!$=ts(iqy(1z^an3=_fp$f@j-a)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home_page'
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

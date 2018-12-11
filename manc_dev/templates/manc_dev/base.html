@@ -16,7 +16,7 @@
             font-size:20pt;
             text-decoration:none;
         }
-         .top-menu h5 a{
+         .top-menu h5 a, .top-menu button {
             color:white;
             margin-top:9px;
             float:right;
@@ -36,8 +36,13 @@
 </head>
 <body>
     <div class="page-header">
-         <button type="submit" class="btn btn-success" style="float:right;margin-top:10px">Sign In</button>
         <div class="top-menu">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}?next=/"><button type="submit" class="btn btn-success">logout</button></a>
+            {% else %}
+                <a href="{% url 'login' %}"><button type="submit" class="btn btn-success" style="margin-botton:40px;">login</button></a>
+                <a href="{% url 'signup' %}"><button type="submit" class="btn btn-success">signup</button></a>
+            {% endif %}
             <h5><a href="/">Contact us</a></h5>
             <h5><a href="{% url 'careers' %}">Careers</a></h5>
             <h5><a href="{% url 'about' %}">About</a></h5>
@@ -48,7 +53,7 @@
         {% block content %}
         {% endblock %}
     </div>
-    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <nav class="navbar bottom navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Test</a>
     </nav>
 </body>

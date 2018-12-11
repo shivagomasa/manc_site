@@ -1,15 +1,21 @@
 {% extends 'manc_dev/base.html' %}
 
-{% load crispy_forms_tags %}
-
 {% block content %}
-    <div class="signup-form">
-    <div class="panel panel-default" style="width: 400px; margin: 0 auto;">
-        <h3 style="text-align: center; font-family: sans-serif">Become a badass developer</h3>
-        <div class="panel-body">
-            {% crispy form %}
-        </div>
-    </div>
-    </div>
-
+ <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
 {% endblock %}
