@@ -1,6 +1,6 @@
 appdirs==1.4.3
 certifi==2018.10.15
-Django==2.1.4
+Django==2.2.13
 django-columns==0.1.0
 django-crispy-forms==1.7.2
 packaging==18.0
